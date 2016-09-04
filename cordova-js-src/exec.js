@@ -51,10 +51,11 @@ var cordova = require('cordova'),
         // For the ONLINE_EVENT to be viable, it would need to intercept all event
         // listeners (both through addEventListener and window.ononline) as well
         // as set the navigator property itself.
-        ONLINE_EVENT: 2
+        ONLINE_EVENT: 2,
+        EVAL_BRIDGE: 3
     },
     jsToNativeBridgeMode,  // Set lazily.
-    nativeToJsBridgeMode = nativeToJsModes.ONLINE_EVENT,
+    nativeToJsBridgeMode = nativeToJsModes.EVAL_BRIDGE,
     pollEnabled = false,
     bridgeSecret = -1;
 

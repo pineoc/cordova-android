@@ -28,6 +28,7 @@ import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.view.View;
+import android.webkit.ValueCallback;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.LayoutAlgorithm;
 import android.webkit.WebView;
@@ -116,7 +117,8 @@ public class SystemWebViewEngine implements CordovaWebViewEngine {
                 SystemWebViewEngine.this.cordova.getActivity().runOnUiThread(r);
             }
         }));
-        bridge = new CordovaBridge(pluginManager, nativeToJsMessageQueue);
+        nativeToJsMessageQueue.addBridgeMode(new NativeToJsMessageQueue.EvalBridgeMode(this, cordova));
+	bridge = new CordovaBridge(pluginManager, nativeToJsMessageQueue);
         exposeJsInterface(webView, bridge);
     }
 
@@ -330,5 +332,10 @@ public class SystemWebViewEngine implements CordovaWebViewEngine {
                 LOG.e(TAG, "Error unregistering configuration receiver: " + e.getMessage(), e);
             }
         }
+    }
+
+    @Override
+    public void evaluateJavascript(String js, ValueCallback<String> callback) {
+        webView.evaluateJavascript(js, callback);
     }
 }
