@@ -1,6 +1,6 @@
 {
   "name": "cordova-android",
-  "version": "5.3.0-dev",
+  "version": "6.2.0-dev",
   "description": "cordova-android release",
   "bin": {
     "create": "bin/create"
@@ -24,7 +24,7 @@
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-common": "^1.4.0",
+    "cordova-common": "^1.5.0",
     "elementtree": "^0.1.6",
     "nopt": "^3.0.1",
     "properties-parser": "^0.2.3",

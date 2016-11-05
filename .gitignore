@@ -40,7 +40,6 @@ Desktop.ini
 *.iml
 .idea
 npm-debug.log
-/framework/build
 node_modules/jshint
 node_modules/promise-matchers
 node_modules/jasmine-node
@@ -129,4 +128,5 @@ node_modules/which/
 node_modules/window-size/
 node_modules/wordwrap/
 node_modules/yargs/
+node_modules/fs.realpath/
 /coverage
